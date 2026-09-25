@@ -21,7 +21,10 @@
 		/* The area available after accounting for the phone's safe insets. */
 		.stage {
 			position: fixed;
-			inset: 0;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
 			padding:
 				env(safe-area-inset-top)
 				env(safe-area-inset-right)
@@ -31,13 +34,11 @@
 			place-items: center;
 			overflow: hidden;
 		}
-
-		/* JS positions this at the centre and sets its scale. */
+		
 		.prototype {
 			width: 375px;
 			height: 812px;
-			flex: none;
-			transform-origin: centre;
+			transform-origin: center;
 		}
 
 		.prototype iframe {
@@ -64,27 +65,36 @@
 		const frameHeight = 812;
 		const stage = document.getElementById('stage');
 		const prototype = document.getElementById('prototype');
-
+		
 		function fitPrototype() {
+			const viewport = window.visualViewport;
+			const width = viewport ? viewport.width : window.innerWidth;
+			const height = viewport ? viewport.height : window.innerHeight;
+		
+			stage.style.left = `${viewport ? viewport.offsetLeft : 0}px`;
+			stage.style.top = `${viewport ? viewport.offsetTop : 0}px`;
+			stage.style.width = `${width}px`;
+			stage.style.height = `${height}px`;
+		
 			const styles = getComputedStyle(stage);
-			const availableWidth =
-				stage.clientWidth -
-				parseFloat(styles.paddingLeft) -
-				parseFloat(styles.paddingRight);
-			const availableHeight =
-				stage.clientHeight -
-				parseFloat(styles.paddingTop) -
-				parseFloat(styles.paddingBottom);
-
+			const availableWidth = width
+				- parseFloat(styles.paddingLeft)
+				- parseFloat(styles.paddingRight);
+			const availableHeight = height
+				- parseFloat(styles.paddingTop)
+				- parseFloat(styles.paddingBottom);
+		
 			const scale = Math.min(
 				availableWidth / frameWidth,
 				availableHeight / frameHeight
 			);
-
+		
 			prototype.style.transform = `scale(${scale})`;
 		}
-
-		new ResizeObserver(fitPrototype).observe(stage);
+		
+		window.visualViewport?.addEventListener('resize', fitPrototype);
+		window.visualViewport?.addEventListener('scroll', fitPrototype);
+		window.addEventListener('resize', fitPrototype);
 		fitPrototype();
 	</script>
 </body>
