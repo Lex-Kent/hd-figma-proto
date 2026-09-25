@@ -1,106 +1,15 @@
 <!doctype html>
-<html>
-
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Primark</title>
-	<meta name="keywords" content="Primark, Fashion, Clothing, Accessories, Homeware, Beauty" />
-	<meta name="description" content="Explore the latest fashion trends and collections for men, women, kids, baby, homeware and beauty. With new styles to shop in store and online every day!">
-
-	<meta name="author" content="George Kent">
-
-	<!-- Favicon -->
-	<link rel="icon" href="favicon.ico" sizes="32x32">
-	<link rel="icon" href="img/favicon/icon.svg" type="image/svg+xml">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png"><!-- 180×180 -->
-	<link rel="manifest" href="img/favicon/manifest.webmanifest">
-
-	<!-- Mobile Metas -->
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-	<link rel="stylesheet" href="css/primark.css">
-	<script src="js/primark.js"></script>
-
-</head>
-
-<body class="no-scroll1">
-
-	<svg class="svgDefs" width="0" height="0">
-		<defs>
-			<clipPath id="primarkP" clipPathUnits="objectBoundingBox">
-				<path d="M0,0.262 C0,0.038 0.295,-0.092 0.501,0.077 C0.714,-0.092 1,0.04 1,0.262 C1,0.262 1,0.512 1,0.512 C1,0.707 0.772,0.825 0.586,0.750 C0.581,0.889 0.451,1 0.293,1 C0.131,1 0,0.883 0,0.739 C0,0.739 0,0.262 0,0.262 Z" />
-			</clipPath>
-
-			<!-- 2. Figure shape (the one that lets the person poke out the top) -->
-			<clipPath id="primarkFig" clipPathUnits="objectBoundingBox">
-				<path d="M0,0 C0,0 0,0.774 0,0.774 C0,0.899 0.131,1 0.293,1 C0.451,1 0.58,0.903 0.586,0.783 C0.772,0.849 1,0.747 1,0.577 C1,0.577 1,0 1,0 C1,0 0,0 0,0 Z" />
-			</clipPath>
-		</defs>
-		<!-- M301,52 C177,-62 0,26 0,177 C0,177 0,500 0,500 C0,597 79,676 176,676 C271,676 349,601 352,507 C464,558 601,478 601,346 C601,346 601,177 601,177 C601,27 429,-62 301,52 Z -->
-	</svg>
-
-	<div class="content-container">
-
-		<div class="page-container">
-
-			<header class="app-header">
-				<div class="header-content">
-					<div class="header-content-top">
-						<a href="#" class="lnkRoot">
-							<img src="img/primarkLogoAqua.svg" alt="Primark">
-						</a>
-						<button id="btnSelectStore" class="btn btn-ico-24 btn-ico-r btn-flat font12 underlined" aria-label="Menu">Select Store</button>
-					</div>
-					<div class="search-bar">
-						<input id="inpSearch" name="inpSearch" type="search" placeholder="Search Primark..." aria-label="Search">
-						<button id="btnSearch" class="btn btn-icon btn-icon-small btn-ico-32 btn-flat" aria-label="Search"></button>
-					</div>
-				</div>
-
-				<!-- Tab bar (secondary nav) -->
-				<nav class="tab-bar" aria-label="Main tabs">
-					<a href="#" class="tab active">Women</a>
-					<a href="#" class="tab">Click &amp; Collect</a>
-					<a href="#" class="tab">Pyjamas &amp; Nightwear</a>
-					<a href="#" class="tab">Men</a>
-					<a href="#" class="tab">Kids</a>
-					<a href="#" class="tab">Baby</a>
-					<a href="#" class="tab">Home</a>
-					<a href="#" class="tab">Holiday Shop</a>
-					<a href="#" class="tab">Activewear</a>
-					<a href="#" class="tab">Beauty</a>
-					<a href="#" class="tab">Collab</a>
-					<a href="#" class="tab">Sale</a>
-				</nav>
-			</header>
-
-			<!-- Main scrollable content -->
-			<main class="app-main">
-				<div class="p-crop-img">
-					<div class="p-crop-bg" id="pCropBgPolka"></div>
-					<div class="p-crop-fig" id="pCropFigPolka"></div>
-					<!-- <img src="img/polkaBG_cropped.webp" alt="Polka dot background" class="polka-bg">
-					<img src="img/polkaFigure2.webp" alt="Polka dot dress" class="polka-fig"> -->
-				</div>
-			</main>
-
-		</div>
-
-		<!-- Bottom / side navigation (outside main flow) -->
-		<nav class="app-nav" aria-label="Primary navigation">
-			<a href="#" class="lnkRoot">
-				<img src="img/primarkLogoAqua.svg" alt="Primark">
-			</a>
-			<a id="lnkHome" href="#" class="nav-item btn-ico-24 active">Home</a>
-			<a id="lnkShop" href="#" class="nav-item btn-ico-24">Shop</a>
-			<a id="lnkFavourites" href="#" class="nav-item btn-ico-24">Favourites</a>
-			<a id="lnkBag" href="#" class="nav-item btn-ico-24">Bag</a>
-			<a id="lnkAccount" href="#" class="nav-item btn-ico-24">Account</a>
-		</nav>
-
-	</div>
-
-</body>
-
-</html>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<style>
+  html, body { margin: 0; height: 100%; background: #111; }
+  iframe {
+    width: 100%;
+    height: 100dvh;
+    border: 0;
+    display: block;
+  }
+</style>
+<iframe
+  src="https://embed.figma.com/proto/atqGJZcVlOh2gAnQ9kXqv2/Home-Delivery-Exploration?node-id=1083-439534&starting-point-node-id=1083-439534&page-id=867-231740&scaling=contain&content-scaling=fixed&hide-ui=1&embed-host=primark-proto"
+  allowfullscreen
+></iframe>
